@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 	public static PlayerController self;
 	public bool canMove = false;
-	public float moveDuration = 0.2f;
+	public float moveDuration;
 	public Vector2 currentTile;
 
 	private SpriteRenderer rend;
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
 			"position", GridController.self.GetWorldPosition (currentTile),
 			"islocal", false,
 			"looptype", "none",
-			"easetype", iTween.EaseType.easeInOutCirc,
+			"easetype", iTween.EaseType.easeOutBack,
 			"time", moveDuration		
 		));
 
