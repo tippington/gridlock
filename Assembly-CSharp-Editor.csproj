@@ -46,6 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AmplifyBloom\Plugins\Editor\About.cs" />
+     <Compile Include="Assets\AmplifyBloom\Plugins\Editor\AmplifyBloomEffectEditor.cs" />
+     <Compile Include="Assets\AmplifyBloom\Plugins\Editor\AmplifyBloomEffectEditorBase.cs" />
      <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
      <Compile Include="Assets\DoozyUI\PlayMaker\Scripts\Editor\PlaymakerEventDispatcherInspector.cs" />
      <Compile Include="Assets\DoozyUI\Scripts\Editor\DoozyUIControlPanel.cs" />
@@ -140,6 +143,7 @@
      <Compile Include="Assets\PlayMaker\Editor\ReportWindow.cs" />
      <Compile Include="Assets\iTween\PlayMaker\Editor\iTweenMoveToActionEditor.cs" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\LOOP\FastScaleLoop_LOOP.xml" />
+     <None Include="Assets\AmplifyBloom\Resources\BloomFrag.cginc" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\SproutOut_OUT.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\WiggleRotateScaleIn_IN.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\CascadeIn_IN.xml" />
@@ -169,6 +173,8 @@
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\ClickVerticalScale_OnClick.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\ScaleJumpDown_OnClick.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\QuickScaleIn_OnClick.xml" />
+     <None Include="Assets\AmplifyBloom\Resources\Bloom.shader" />
+     <None Include="Assets\AmplifyBloom\Readme.txt" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\RotateQuick5_ButtonLoops.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\OrganicRotateSlow5_ButtonLoops.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\ScaleInSoft_ButtonLoops.xml" />
@@ -251,6 +257,7 @@
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\WiggleVertical_ButtonLoops.xml" />
      <None Include="Assets\Demigiant\DemiLib\Core\Editor\DemiEditor.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\ClickReturnIn_OnClick.xml" />
+     <None Include="Assets\AmplifyBloom\Resources\BloomLib.cginc" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\RiseOut_OUT.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\ScaleJumpUp_OnClick.xml" />
      <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
@@ -262,6 +269,7 @@
      <None Include="Assets\DoozyUI\Presets\UIAnimations\LOOP\FastRotateLeft_LOOP.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\JumpIn_IN.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\PunchRotateOut_OUT.xml" />
+     <None Include="Assets\AmplifyBloom\Resources\BloomFinal.shader" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\LOOP\SlowRotateRight_LOOP.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\TwitchToLeft_OnClick.xml" />
  <Reference Include="UnityEditor.Advertisements">
@@ -371,6 +379,12 @@
  </Reference>
  <Reference Include="DOTween46">
  <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="AmplifyBloom">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/AmplifyBloom/Plugins/AmplifyBloom.dll</HintPath>
+ </Reference>
+ <Reference Include="AmplifyBloomEditor">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/AmplifyBloom/Plugins/Editor/AmplifyBloomEditor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

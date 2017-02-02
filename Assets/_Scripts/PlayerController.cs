@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
 			"position", GridController.self.GetWorldPosition (currentTile),
 			"islocal", false,
 			"looptype", "none",
-			"easetype", iTween.EaseType.easeOutQuad,
+			"easetype", iTween.EaseType.easeInOutCirc,
 			"time", moveDuration		
 		));
 
