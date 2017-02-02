@@ -63,17 +63,36 @@ public class PlayerController : MonoBehaviour
 
 	void Move (string dir)
 	{
+		//make sure not going off-screen
+		//make sure not moving through hole
+		Vector2 holeTile = GameController.self.currentHole.currentTile;
 		switch (dir) {
 		case "up":
+			if (currentTile.y > 5)
+				break;
+			if (currentTile.x == holeTile.x && currentTile.y + 1 == holeTile.y)
+				break;
 			currentTile = new Vector2 (currentTile.x, currentTile.y + 1);
 			break;
 		case "down":
+			if (currentTile.y < -5)
+				break;
+			if (currentTile.x == holeTile.x && currentTile.y - 1 == holeTile.y)
+				break;
 			currentTile = new Vector2 (currentTile.x, currentTile.y - 1);
 			break;
 		case "left":
+			if (currentTile.x < -2)
+				break;
+			if (currentTile.y == holeTile.y && currentTile.x == holeTile.x + 1)
+				break;
 			currentTile = new Vector2 (currentTile.x - 1, currentTile.y);
 			break;
 		case "right":
+			if (currentTile.x > 2)
+				break;
+			if (currentTile.y == holeTile.y && currentTile.x == holeTile.x - 1)
+				break;
 			currentTile = new Vector2 (currentTile.x + 1, currentTile.y);
 			break;
 		}
@@ -96,7 +115,7 @@ public class PlayerController : MonoBehaviour
 
 	void CheckDie ()
 	{
-		if (currentTile == GameController.self.currentHole.currentTile)
-			Die ();
+//		if (currentTile == GameController.self.currentHole.currentTile)
+//			Die ();
 	}
 }
