@@ -16,10 +16,12 @@ public class Tile : MonoBehaviour
 	private bool fadingOut = false;
 	private float fadeTimer;
 	private GameObject tileObj;
+	private Animator animator;
 	private SpriteRenderer rend;
 
 	void Start ()
 	{
+		animator = GetComponent<Animator> ();
 		rend = GetComponent<SpriteRenderer> ();
 	}
 
@@ -27,21 +29,21 @@ public class Tile : MonoBehaviour
 	{
 		hotDuration = Global.hotCycleInterval * 0.6f;
 		warningDuration = Global.hotCycleInterval * 0.2f;
-
-		if (rend == null)
-			return;
-
-		if (fadingIn || fadingOut) {
-			fadeTimer += Time.deltaTime;
-			float progress = fadeTimer / warningDuration;
-			//lerp color
-			Color newColor = Color.white;
-			if (fadingIn)
-				newColor.a = Mathf.Lerp (0f, maxAlpha, progress);
-			else
-				newColor.a = Mathf.Lerp (maxAlpha, 0f, progress);
-			rend.color = newColor;
-		}
+//
+//		if (rend == null)
+//			return;
+//
+//		if (fadingIn || fadingOut) {
+//			fadeTimer += Time.deltaTime;
+//			float progress = fadeTimer / warningDuration;
+//			//lerp color
+//			Color newColor = Color.white;
+//			if (fadingIn)
+//				newColor.a = Mathf.Lerp (0f, maxAlpha, progress);
+//			else
+//				newColor.a = Mathf.Lerp (maxAlpha, 0f, progress);
+//			rend.color = newColor;
+//		}
 	}
 
 	public void LineUp ()
@@ -57,17 +59,20 @@ public class Tile : MonoBehaviour
 
 	IEnumerator Heat ()
 	{
-		fadeTimer = 0f;
-		fadingIn = true;
-		yield return new WaitForSeconds (warningDuration);
-		fadingIn = false;
+//		fadeTimer = 0f;
+		//		fadingIn = true;
+		animator.SetTrigger ("startOpen");
+//		yield return new WaitForSeconds (warningDuration);
+//		fadingIn = false;
 		isHot = true;
 		yield return new WaitForSeconds (hotDuration);
-		fadeTimer = 0f;
+//		fadeTimer = 0f;
 		isHot = false;
-		fadingOut = true;
-		yield return new WaitForSeconds (warningDuration);
-		fadingOut = false;
+		animator.SetTrigger ("startClose");
+//		fadingOut = true;
+//		yield return new WaitForSeconds (warningDuration);
+//		fadingOut = false;
+
 	}
 
 
