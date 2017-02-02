@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FlipWebApps.BeautifulTransitions.Scripts.Shake;
 
 public class PlayerController : MonoBehaviour
 {
@@ -76,8 +77,10 @@ public class PlayerController : MonoBehaviour
 			break;
 		case "explode":
 			animator.SetTrigger ("dieExplode");
+			ShakeHelper.Shake (this, GameObject.FindGameObjectWithTag ("MainCamera").transform, 0.18f, new Vector3 (1f, 1f, 1f));
 			break;
 		}
+
 
 		StartCoroutine (DieAfter (0.3f));
 	}

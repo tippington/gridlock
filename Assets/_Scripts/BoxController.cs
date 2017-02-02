@@ -63,9 +63,9 @@ public class BoxController : MonoBehaviour
 
 	void Score ()
 	{
-		//TODO: fall animation
+		animator.SetTrigger ("startSolve");
 		GameController.self.Score ();
-		Destroy (gameObject);
+		StartCoroutine (DieAfter (0.18f));
 	}
 
 	IEnumerator CheckHole (float wait)
@@ -74,5 +74,11 @@ public class BoxController : MonoBehaviour
 
 		if (currentTile == GameController.self.currentHole.currentTile)
 			Score ();
+	}
+
+	IEnumerator DieAfter (float wait)
+	{
+		yield return new WaitForSeconds (wait);
+		Destroy (gameObject);
 	}
 }

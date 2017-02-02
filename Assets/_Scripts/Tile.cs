@@ -17,33 +17,16 @@ public class Tile : MonoBehaviour
 	private float fadeTimer;
 	private GameObject tileObj;
 	private Animator animator;
-	private SpriteRenderer rend;
 
 	void Start ()
 	{
 		animator = GetComponent<Animator> ();
-		rend = GetComponent<SpriteRenderer> ();
 	}
 
 	void Update ()
 	{
 		hotDuration = Global.hotCycleInterval * 0.6f;
 		warningDuration = Global.hotCycleInterval * 0.2f;
-//
-//		if (rend == null)
-//			return;
-//
-//		if (fadingIn || fadingOut) {
-//			fadeTimer += Time.deltaTime;
-//			float progress = fadeTimer / warningDuration;
-//			//lerp color
-//			Color newColor = Color.white;
-//			if (fadingIn)
-//				newColor.a = Mathf.Lerp (0f, maxAlpha, progress);
-//			else
-//				newColor.a = Mathf.Lerp (maxAlpha, 0f, progress);
-//			rend.color = newColor;
-//		}
 	}
 
 	public void LineUp ()
