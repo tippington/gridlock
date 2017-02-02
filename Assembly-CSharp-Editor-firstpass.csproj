@@ -81,6 +81,7 @@
      <None Include="Assets\AmplifyBloom\Resources\Bloom.shader" />
      <None Include="Assets\AmplifyBloom\Readme.txt" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\RotateQuick5_ButtonLoops.xml" />
+     <None Include="Assets\FX Mega Pack\Scripts\Simple Particle Scaler\Simple Particle Scaler - Readme.txt" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\OrganicRotateSlow5_ButtonLoops.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\ScaleInSoft_ButtonLoops.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\TwitchToRight_OnClick.xml" />
@@ -123,6 +124,7 @@
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\ScaleOutPulseHard_ButtonLoops.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\CascadeOut_OUT.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\SailOut_OUT.xml" />
+     <None Include="Assets\FX Mega Pack\FX Mega Pack - Readme.txt" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\SlideRotateInFromLeft_IN.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\ThrustIn_IN.xml" />
@@ -225,6 +227,54 @@
  <Reference Include="UnityEngine.VR">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
+ <Reference Include="AmplifyBloom">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/AmplifyBloom/Plugins/AmplifyBloom.dll</HintPath>
+ </Reference>
+ <Reference Include="AmplifyBloomEditor">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/AmplifyBloom/Plugins/Editor/AmplifyBloomEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="DemiLib">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+ </Reference>
+ <Reference Include="DemiEditor">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenEditor">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenPro">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenProEditor">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="ConditionalExpression">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/PlayMaker/ConditionalExpression.dll</HintPath>
+ </Reference>
+ <Reference Include="ConditionalExpressionEditor">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/PlayMaker/Editor/ConditionalExpressionEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/PlayMaker/Editor/PlayMakerEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditorResources">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/PlayMaker/Editor/PlayMakerEditorResources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMaker">
+ <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Plugins/PlayMaker/PlayMaker.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
@@ -242,54 +292,6 @@
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/macstandalonesupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditorResources">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/PlayMaker/Editor/PlayMakerEditorResources.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditor">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/PlayMaker/Editor/PlayMakerEditor.dll</HintPath>
- </Reference>
- <Reference Include="ConditionalExpressionEditor">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/PlayMaker/Editor/ConditionalExpressionEditor.dll</HintPath>
- </Reference>
- <Reference Include="ConditionalExpression">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/PlayMaker/ConditionalExpression.dll</HintPath>
- </Reference>
- <Reference Include="PlayMaker">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Plugins/PlayMaker/PlayMaker.dll</HintPath>
- </Reference>
- <Reference Include="DemiLib">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
- </Reference>
- <Reference Include="DOTween43">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenEditor">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
- </Reference>
- <Reference Include="DOTween50">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenProEditor">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
- </Reference>
- <Reference Include="DOTween">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenPro">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
- </Reference>
- <Reference Include="DemiEditor">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
- </Reference>
- <Reference Include="DOTween46">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
- </Reference>
- <Reference Include="AmplifyBloom">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/AmplifyBloom/Plugins/AmplifyBloom.dll</HintPath>
- </Reference>
- <Reference Include="AmplifyBloomEditor">
- <HintPath>/Volumes/THE CACHE/brainstorm/Gridlock/Assets/AmplifyBloom/Plugins/Editor/AmplifyBloomEditor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
