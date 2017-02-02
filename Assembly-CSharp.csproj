@@ -793,6 +793,7 @@
      <Compile Include="Assets\PlayMaker\Include\iTweenFSMEvents.cs" />
      <Compile Include="Assets\PlayMaker\UpdateHelper.cs" />
      <Compile Include="Assets\_Scripts\BoxController.cs" />
+     <Compile Include="Assets\_Scripts\DifficultyController.cs" />
      <Compile Include="Assets\_Scripts\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\GameController.cs" />
      <Compile Include="Assets\_Scripts\Global.cs" />

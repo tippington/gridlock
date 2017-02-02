@@ -10,7 +10,6 @@ public class SpawnController : MonoBehaviour
 	public bool spawnCoins = false;
 	public List<GameObject> enemies;
 	public List<GameObject> coins;
-	public float enemySpawnInterval = 0.6f;
 	public float coinSpawnInterval = 6f;
 
 	private List<Vector3> enemySpawnPoints;
@@ -27,7 +26,7 @@ public class SpawnController : MonoBehaviour
 	{
 		if (spawnEnemies) {
 			enemySpawnTimer += Time.deltaTime;
-			if (enemySpawnTimer >= enemySpawnInterval) {
+			if (enemySpawnTimer >= DifficultyController.self.enemySpawnInterval) {
 				enemySpawnTimer = 0f;
 				SpawnEnemy ();
 			}
