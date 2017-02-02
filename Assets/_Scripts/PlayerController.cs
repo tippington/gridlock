@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 	public float moveDuration;
 	public Vector2 currentTile;
 
+	private Animator animator;
+	private BoxCollider collider;
 	private SpriteRenderer rend;
 	private Vector3 targetPos;
 
@@ -19,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
 	void Start ()
 	{
+		animator = GetComponent<Animator> ();
+		collider = GetComponent<BoxCollider> ();
 		rend = GetComponent<SpriteRenderer> ();
 		Global.currentPlayer = gameObject;
 	}
@@ -42,7 +46,7 @@ public class PlayerController : MonoBehaviour
 	{
 		switch (col.gameObject.tag) {
 		case "Enemy":
-			Die ();
+			Die ("explode");
 			col.gameObject.GetComponent<EnemyController> ().Die ();
 			break;
 		case "Coin":
@@ -57,17 +61,30 @@ public class PlayerController : MonoBehaviour
 		transform.position = Vector3.zero;
 		currentTile = Vector2.zero;
 		rend.enabled = true;
+		collider.enabled = true;
 		canMove = true;
 	}
 
-	public void Die ()
+	public void Die (string anim)
 	{
+		canMove = false;
+		collider.enabled = false;
+
+		switch (anim) {
+		case "fall":
+			animator.SetTrigger ("dieFall");
+			break;
+		case "explode":
+			animator.SetTrigger ("dieExplode");
+			break;
+		}
+
 		StartCoroutine (DieAfter (0.3f));
 	}
 
 	void Move (string dir)
 	{
-		GetComponent<Animator> ().SetTrigger ("startMove");
+		animator.SetTrigger ("startMove");
 
 		if (!CheckCanMove (dir))
 			return;
@@ -106,7 +123,7 @@ public class PlayerController : MonoBehaviour
 	void CheckDie ()
 	{
 		if (GridController.self.CheckIfOnHotTile (currentTile))
-			Die ();
+			Die ("fall");
 	}
 
 	bool CheckCanMove (string dir)
@@ -206,7 +223,6 @@ public class PlayerController : MonoBehaviour
 
 	IEnumerator DieAfter (float wait)
 	{
-		canMove = false;
 		yield return new WaitForSeconds (wait);
 		GameController.self.GameOver ();
 		rend.enabled = false;
