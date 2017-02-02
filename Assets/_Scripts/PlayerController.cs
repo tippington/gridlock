@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
 	public void Die ()
 	{
-		Destroy (gameObject);
+		StartCoroutine (DieAfter (0.3f));
 	}
 
 	void Move (string dir)
@@ -99,13 +99,13 @@ public class PlayerController : MonoBehaviour
 
 	void CheckDie ()
 	{
-//		if (currentTile == GameController.self.currentHole.currentTile)
-//			Die ();
+		if (GridController.self.CheckIfOnHotTile (currentTile))
+			Die ();
 	}
 
 	bool CheckCanMove (string dir)
 	{
-		bool canMove = true;
+		bool mayMove = true;
 
 		//check boundaries
 		int gridSizeX = (int)GameController.self.gridSize.x;
@@ -120,18 +120,18 @@ public class PlayerController : MonoBehaviour
 		switch (dir) {
 		case "up":
 			if (currentTile.y > 5)
-				canMove = false;
+				mayMove = false;
 			if (currentTile.x == holeTile.x && currentTile.y + 1 == holeTile.y)
-				canMove = false;
+				mayMove = false;
 			for (int i = 0; i < boxTiles.Count; i++) {
 				if (currentTile.x == boxTiles [i].x) {
 					if (currentTile.y == boxTiles [i].y - 1) {
 						if (gridSizeY == 3) {
 							if (boxTiles [i].y == 1)
-								canMove = false;
+								mayMove = false;
 						} else if (gridSizeY == 5) {
 							if (boxTiles [i].y == 3)
-								canMove = false;
+								mayMove = false;
 						}
 					}
 				}
@@ -139,18 +139,18 @@ public class PlayerController : MonoBehaviour
 			break;
 		case "down":
 			if (currentTile.y < -5)
-				canMove = false;
+				mayMove = false;
 			if (currentTile.x == holeTile.x && currentTile.y - 1 == holeTile.y)
-				canMove = false;
+				mayMove = false;
 			for (int i = 0; i < boxTiles.Count; i++) {
 				if (currentTile.x == boxTiles [i].x) {
 					if (currentTile.y == boxTiles [i].y + 1) {
 						if (gridSizeY == 3) {
 							if (boxTiles [i].y == -1)
-								canMove = false;
+								mayMove = false;
 						} else if (gridSizeY == 5) {
 							if (boxTiles [i].y == -3)
-								canMove = false;
+								mayMove = false;
 						}
 					}
 				}
@@ -158,18 +158,18 @@ public class PlayerController : MonoBehaviour
 			break;
 		case "left":
 			if (currentTile.x < -2)
-				canMove = false;
+				mayMove = false;
 			if (currentTile.y == holeTile.y && currentTile.x == holeTile.x + 1)
-				canMove = false;
+				mayMove = false;
 			for (int i = 0; i < boxTiles.Count; i++) {
 				if (currentTile.y == boxTiles [i].y) {
 					if (currentTile.x == boxTiles [i].x + 1) {
 						if (gridSizeX == 3) {
 							if (boxTiles [i].x == -1)
-								canMove = false;
+								mayMove = false;
 						} else if (gridSizeX == 5) {
 							if (boxTiles [i].x == -3)
-								canMove = false;
+								mayMove = false;
 						}
 					}
 				}
@@ -177,24 +177,31 @@ public class PlayerController : MonoBehaviour
 			break;
 		case "right":
 			if (currentTile.x > 2)
-				canMove = false;
+				mayMove = false;
 			if (currentTile.y == holeTile.y && currentTile.x == holeTile.x - 1)
-				canMove = false;
+				mayMove = false;
 			for (int i = 0; i < boxTiles.Count; i++) {
 				if (currentTile.y == boxTiles [i].y) {
 					if (currentTile.x == boxTiles [i].x - 1) {
 						if (gridSizeX == 3) {
 							if (boxTiles [i].x == 1)
-								canMove = false;
+								mayMove = false;
 						} else if (gridSizeX == 5) {
 							if (boxTiles [i].x == 3)
-								canMove = false;
+								mayMove = false;
 						}
 					}
 				}
 			}
 			break;			
 		}
-		return canMove;
+		return mayMove;
+	}
+
+	IEnumerator DieAfter (float wait)
+	{
+		canMove = false;
+		yield return new WaitForSeconds (wait);
+		Destroy (gameObject);
 	}
 }

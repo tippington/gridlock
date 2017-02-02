@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour
 {
 	public static GameController self;
 
+	public bool showDebug = false;
+
 	public GameObject box;
 	public GameObject hole;
 	public Vector2 gridSize;
@@ -33,6 +35,7 @@ public class GameController : MonoBehaviour
 		Global.currentScore = 0;
 		PlayerController.self.GameStart ();
 		SpawnController.self.GameStart ();
+		GridController.self.GameStart ();
 		SpawnBox ();
 	}
 
@@ -48,8 +51,14 @@ public class GameController : MonoBehaviour
 
 	void OnGUI ()
 	{
+		if (!showDebug)
+			return;
+		
 		GUI.Label (new Rect (0, 0, 150, 20), "Score : " + Global.currentScore.ToString ());
 		GUI.Label (new Rect (0, 20, 150, 20), "Coins : " + Global.coins.ToString ());
+		GUI.Label (new Rect (0, 60, 300, 20), "Enemy Spawn Interval : " + Global.enemySpawnInterval.ToString ("F4"));
+		GUI.Label (new Rect (0, 80, 300, 20), "Hot Percentage : " + Global.hotPercentage.ToString ("F4"));
+		GUI.Label (new Rect (0, 100, 300, 20), "Hot Cycle Interval : " + Global.hotCycleInterval.ToString ("F4"));
 		if (GUI.Button (new Rect (Screen.width / 2 - 60, Screen.height - 60, 120, 60), "Reinit")) {
 			Application.LoadLevel ("Level0");
 		}

@@ -802,6 +802,7 @@
      <Compile Include="Assets\_Scripts\HoleController.cs" />
      <Compile Include="Assets\_Scripts\PlayerController.cs" />
      <Compile Include="Assets\_Scripts\SpawnController.cs" />
+     <Compile Include="Assets\_Scripts\Tile.cs" />
      <Compile Include="Assets\iTween\iTween.cs" />
      <None Include="Assets\Demigiant\DOTweenPro\readme.txt" />
      <None Include="Assets\PlayMaker\Templates\readme.txt" />

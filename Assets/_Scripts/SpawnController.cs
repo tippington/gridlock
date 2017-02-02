@@ -26,7 +26,7 @@ public class SpawnController : MonoBehaviour
 	{
 		if (spawnEnemies) {
 			enemySpawnTimer += Time.deltaTime;
-			if (enemySpawnTimer >= DifficultyController.self.enemySpawnInterval) {
+			if (enemySpawnTimer >= Global.enemySpawnInterval) {
 				enemySpawnTimer = 0f;
 				SpawnEnemy ();
 			}
