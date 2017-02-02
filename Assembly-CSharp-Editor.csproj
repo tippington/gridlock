@@ -46,10 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\2DDL\2DLight\Editor\DynamicLightEditor.cs" />
-     <Compile Include="Assets\2DDL\2DLight\Editor\DynamicLightMenu.cs" />
-     <Compile Include="Assets\2DDL\2DLight\Editor\EditorUtils.cs" />
-     <Compile Include="Assets\2DDL\2DLight\Editor\SortingMethod.cs" />
      <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
      <Compile Include="Assets\DoozyUI\PlayMaker\Scripts\Editor\PlaymakerEventDispatcherInspector.cs" />
      <Compile Include="Assets\DoozyUI\Scripts\Editor\DoozyUIControlPanel.cs" />
@@ -144,13 +140,11 @@
      <Compile Include="Assets\PlayMaker\Editor\ReportWindow.cs" />
      <Compile Include="Assets\iTween\PlayMaker\Editor\iTweenMoveToActionEditor.cs" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\LOOP\FastScaleLoop_LOOP.xml" />
-     <None Include="Assets\2DDL\2DLight\Shaders\StencilObject.shader" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\SproutOut_OUT.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\WiggleRotateScaleIn_IN.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\CascadeIn_IN.xml" />
      <None Include="Assets\Demigiant\DOTweenPro\readme.txt" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\FadeOutSoft_ButtonLoops.xml" />
-     <None Include="Assets\2DDL\2DLight\Shaders\DefaultTexturized.shader" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\RotateScaleOut_OUT.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\ScaleJumpRight_OnClick.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\SailIn_IN.xml" />
@@ -158,7 +152,6 @@
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\OrganicVerticalStretch_OnClick.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\OrganicVerticalSlide_ButtonLoops.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\SlideRotateOutToRight_OUT.xml" />
-     <None Include="Assets\2DDL\Bugs\READ FIRST.txt" />
      <None Include="Assets\PlayMaker\Readme.txt" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\LOOP\FastRotateRight_LOOP.xml" />
      <None Include="Assets\Demigiant\DemiLib\Core\DemiLib.xml" />
@@ -172,13 +165,10 @@
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\ScaleOutRotateRight_OnClick.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\HorizontalMoveScaleIn_ButtonLoops.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\OrganicHorizontalStretch_OnClick.xml" />
-     <None Include="Assets\2DDL\2DLight\Shaders\RadialGradientAlphaBlend.shader" />
-     <None Include="Assets\2DDL\2DLight\Shaders\DepthMask.shader" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\LOOP\DefaultPreset_LOOP.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\ClickVerticalScale_OnClick.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\ScaleJumpDown_OnClick.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\QuickScaleIn_OnClick.xml" />
-     <None Include="Assets\2DDL\2DLight\Shaders\CGTexturizing.shader" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\RotateQuick5_ButtonLoops.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\OrganicRotateSlow5_ButtonLoops.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\ScaleInSoft_ButtonLoops.xml" />
@@ -193,7 +183,6 @@
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\Levitate_ButtonLoops.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\RotateQuick10_ButtonLoops.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\SlideRotateLeft_OnClick.xml" />
-     <None Include="Assets\2DDL\2DLight\Shaders\OffsetShader.shader" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\DropDownFade_OUT.xml" />
      <None Include="Assets\DoozyUI\Readme.txt" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\DefaultPreset_IN.xml" />
@@ -224,7 +213,6 @@
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\CascadeOut_OUT.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\SailOut_OUT.xml" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
-     <None Include="Assets\2DDL\2DLight\Shaders\StencilMask.shader" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\SlideRotateInFromLeft_IN.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\ThrustIn_IN.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\PunchRotateIn_IN.xml" />
@@ -232,7 +220,6 @@
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\PunchOut_OUT.xml" />
      <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\OrganicHorizontalSlide_ButtonLoops.xml" />
-     <None Include="Assets\2DDL\2DLight\Shaders\VertexColor.shader" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\IN\PunchIN_IN.xml" />
      <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\ThrustOut_OUT.xml" />
@@ -240,7 +227,6 @@
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\ClickReturnOut_OnClick.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\ButtonLoops\ScaleOutPulseSoft_ButtonLoops.xml" />
      <None Include="Assets\PlayMaker\Resources\PlayMakerAssemblies.txt" />
-     <None Include="Assets\2DDL\2DLight\Shaders\Gradient-ZFighting.shader" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OnClick\ElasticRotateLeft_OnClick.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\JumpOut_OUT.xml" />
      <None Include="Assets\DoozyUI\Presets\UIAnimations\OUT\SlideCardToRight_OUT.xml" />

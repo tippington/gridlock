@@ -23,7 +23,7 @@ public class GridController : MonoBehaviour
 
 	void Start ()
 	{
-		InitTiles ();
+		GameStart ();
 	}
 
 	void Update ()
@@ -40,6 +40,7 @@ public class GridController : MonoBehaviour
 
 	public void GameStart ()
 	{
+		InitTiles ();
 	}
 
 	public Vector3 GetWorldPosition (Vector2 tile)
