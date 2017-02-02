@@ -63,36 +63,20 @@ public class PlayerController : MonoBehaviour
 
 	void Move (string dir)
 	{
-		//make sure not going off-screen
-		//make sure not moving through hole
-		Vector2 holeTile = GameController.self.currentHole.currentTile;
+		if (!CheckCanMove (dir))
+			return;
+		
 		switch (dir) {
 		case "up":
-			if (currentTile.y > 5)
-				break;
-			if (currentTile.x == holeTile.x && currentTile.y + 1 == holeTile.y)
-				break;
 			currentTile = new Vector2 (currentTile.x, currentTile.y + 1);
 			break;
 		case "down":
-			if (currentTile.y < -5)
-				break;
-			if (currentTile.x == holeTile.x && currentTile.y - 1 == holeTile.y)
-				break;
 			currentTile = new Vector2 (currentTile.x, currentTile.y - 1);
 			break;
 		case "left":
-			if (currentTile.x < -2)
-				break;
-			if (currentTile.y == holeTile.y && currentTile.x == holeTile.x + 1)
-				break;
 			currentTile = new Vector2 (currentTile.x - 1, currentTile.y);
 			break;
 		case "right":
-			if (currentTile.x > 2)
-				break;
-			if (currentTile.y == holeTile.y && currentTile.x == holeTile.x - 1)
-				break;
 			currentTile = new Vector2 (currentTile.x + 1, currentTile.y);
 			break;
 		}
@@ -117,5 +101,100 @@ public class PlayerController : MonoBehaviour
 	{
 //		if (currentTile == GameController.self.currentHole.currentTile)
 //			Die ();
+	}
+
+	bool CheckCanMove (string dir)
+	{
+		bool canMove = true;
+
+		//check boundaries
+		int gridSizeX = (int)GameController.self.gridSize.x;
+		int gridSizeY = (int)GameController.self.gridSize.y;
+		//check against hole
+		Vector2 holeTile = GameController.self.currentHole.currentTile;
+		//check against box
+		List<Vector2> boxTiles = new List<Vector2> ();
+		foreach (GameObject box in GameObject.FindGameObjectsWithTag("Box"))
+			boxTiles.Add (box.GetComponent<BoxController> ().currentTile);
+
+		switch (dir) {
+		case "up":
+			if (currentTile.y > 5)
+				canMove = false;
+			if (currentTile.x == holeTile.x && currentTile.y + 1 == holeTile.y)
+				canMove = false;
+			for (int i = 0; i < boxTiles.Count; i++) {
+				if (currentTile.x == boxTiles [i].x) {
+					if (currentTile.y == boxTiles [i].y - 1) {
+						if (gridSizeY == 3) {
+							if (boxTiles [i].y == 1)
+								canMove = false;
+						} else if (gridSizeY == 5) {
+							if (boxTiles [i].y == 3)
+								canMove = false;
+						}
+					}
+				}
+			}
+			break;
+		case "down":
+			if (currentTile.y < -5)
+				canMove = false;
+			if (currentTile.x == holeTile.x && currentTile.y - 1 == holeTile.y)
+				canMove = false;
+			for (int i = 0; i < boxTiles.Count; i++) {
+				if (currentTile.x == boxTiles [i].x) {
+					if (currentTile.y == boxTiles [i].y + 1) {
+						if (gridSizeY == 3) {
+							if (boxTiles [i].y == -1)
+								canMove = false;
+						} else if (gridSizeY == 5) {
+							if (boxTiles [i].y == -3)
+								canMove = false;
+						}
+					}
+				}
+			}
+			break;
+		case "left":
+			if (currentTile.x < -2)
+				canMove = false;
+			if (currentTile.y == holeTile.y && currentTile.x == holeTile.x + 1)
+				canMove = false;
+			for (int i = 0; i < boxTiles.Count; i++) {
+				if (currentTile.y == boxTiles [i].y) {
+					if (currentTile.x == boxTiles [i].x + 1) {
+						if (gridSizeX == 3) {
+							if (boxTiles [i].x == -1)
+								canMove = false;
+						} else if (gridSizeX == 5) {
+							if (boxTiles [i].x == -3)
+								canMove = false;
+						}
+					}
+				}
+			}
+			break;
+		case "right":
+			if (currentTile.x > 2)
+				canMove = false;
+			if (currentTile.y == holeTile.y && currentTile.x == holeTile.x - 1)
+				canMove = false;
+			for (int i = 0; i < boxTiles.Count; i++) {
+				if (currentTile.y == boxTiles [i].y) {
+					if (currentTile.x == boxTiles [i].x - 1) {
+						if (gridSizeX == 3) {
+							if (boxTiles [i].x == 1)
+								canMove = false;
+						} else if (gridSizeX == 5) {
+							if (boxTiles [i].x == 3)
+								canMove = false;
+						}
+					}
+				}
+			}
+			break;			
+		}
+		return canMove;
 	}
 }
