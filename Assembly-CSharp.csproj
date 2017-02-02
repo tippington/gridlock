@@ -793,11 +793,13 @@
      <Compile Include="Assets\PlayMaker\Include\iTweenFSMEvents.cs" />
      <Compile Include="Assets\PlayMaker\UpdateHelper.cs" />
      <Compile Include="Assets\_Scripts\BoxController.cs" />
+     <Compile Include="Assets\_Scripts\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\GameController.cs" />
      <Compile Include="Assets\_Scripts\Global.cs" />
      <Compile Include="Assets\_Scripts\GridController.cs" />
      <Compile Include="Assets\_Scripts\HoleController.cs" />
      <Compile Include="Assets\_Scripts\PlayerController.cs" />
+     <Compile Include="Assets\_Scripts\SpawnController.cs" />
      <Compile Include="Assets\iTween\iTween.cs" />
      <None Include="Assets\Demigiant\DOTweenPro\readme.txt" />
      <None Include="Assets\PlayMaker\Templates\readme.txt" />

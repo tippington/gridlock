@@ -27,12 +27,18 @@ public class GameController : MonoBehaviour
 		GameStart ();
 	}
 
-	void GameStart ()
+	public void GameStart ()
 	{
 		InitGrid ();
 		Global.currentScore = 0;
 		PlayerController.self.GameStart ();
+		SpawnController.self.GameStart ();
 		SpawnBox ();
+	}
+
+	public void GameOver ()
+	{
+		
 	}
 
 	void Update ()
@@ -42,7 +48,10 @@ public class GameController : MonoBehaviour
 
 	void OnGUI ()
 	{
-		GUI.Label (new Rect (0, 20, 150, 20), "Score : " + Global.currentScore.ToString ());
+		GUI.Label (new Rect (0, 0, 150, 20), "Score : " + Global.currentScore.ToString ());
+		if (GUI.Button (new Rect (Screen.width / 2 - 60, Screen.height - 20, 120, 20), "Reinit")) {
+			Application.LoadLevel ("Level0");
+		}
 	}
 
 	public void Score ()

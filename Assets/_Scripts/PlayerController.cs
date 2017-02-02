@@ -42,6 +42,11 @@ public class PlayerController : MonoBehaviour
 		canMove = true;
 	}
 
+	public void Die ()
+	{
+		Destroy (gameObject);
+	}
+
 	void Move (string dir)
 	{
 		switch (dir) {
@@ -71,5 +76,13 @@ public class PlayerController : MonoBehaviour
 			BoxController bc = box.GetComponent<BoxController> ();
 			bc.PlayerMove (dir, currentTile);
 		}
+
+		CheckDie ();
+	}
+
+	void CheckDie ()
+	{
+		if (currentTile == GameController.self.currentHole.currentTile)
+			Die ();
 	}
 }
