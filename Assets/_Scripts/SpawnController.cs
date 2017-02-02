@@ -24,6 +24,9 @@ public class SpawnController : MonoBehaviour
 
 	void Update ()
 	{
+		if (GameController.self.state != GameController.GameState.PLAYING)
+			return;
+
 		if (spawnEnemies) {
 			enemySpawnTimer += Time.deltaTime;
 			if (enemySpawnTimer >= Global.enemySpawnInterval) {

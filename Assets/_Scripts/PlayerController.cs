@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 	public float moveDuration = 0.2f;
 	public Vector2 currentTile;
 
+	private SpriteRenderer rend;
 	private Vector3 targetPos;
 
 	void Awake ()
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
 	void Start ()
 	{
+		rend = GetComponent<SpriteRenderer> ();
 		Global.currentPlayer = gameObject;
 	}
 
@@ -52,7 +54,9 @@ public class PlayerController : MonoBehaviour
 
 	public void GameStart ()
 	{
+		transform.position = Vector3.zero;
 		currentTile = Vector2.zero;
+		rend.enabled = true;
 		canMove = true;
 	}
 
@@ -202,6 +206,7 @@ public class PlayerController : MonoBehaviour
 	{
 		canMove = false;
 		yield return new WaitForSeconds (wait);
-		Destroy (gameObject);
+		GameController.self.GameOver ();
+		rend.enabled = false;
 	}
 }

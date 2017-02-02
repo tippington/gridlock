@@ -6,6 +6,14 @@ public class GameController : MonoBehaviour
 {
 	public static GameController self;
 
+	public enum GameState
+	{
+		MENU,
+		PLAYING}
+
+	;
+
+	public GameState state;
 	public bool showDebug = false;
 
 	public GameObject box;
@@ -25,23 +33,25 @@ public class GameController : MonoBehaviour
 
 	void Start ()
 	{
-		//TODO: temporary
-		GameStart ();
+		state = GameState.MENU;
 	}
 
 	public void GameStart ()
 	{
+		ResetBoard ();
 		InitGrid ();
 		Global.currentScore = 0;
 		PlayerController.self.GameStart ();
 		SpawnController.self.GameStart ();
 		GridController.self.GameStart ();
 		SpawnBox ();
+		state = GameState.PLAYING;
 	}
 
 	public void GameOver ()
 	{
-		
+		UIController.self.GameOver ();
+		state = GameState.MENU;
 	}
 
 	void Update ()
@@ -74,6 +84,20 @@ public class GameController : MonoBehaviour
 	public void GotCoin ()
 	{
 		Global.coins++;
+	}
+
+	void ResetBoard ()
+	{
+		foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+			Destroy (enemy);
+		foreach (GameObject box in GameObject.FindGameObjectsWithTag("Box"))
+			Destroy (box);
+		foreach (GameObject hole in GameObject.FindGameObjectsWithTag("Hole"))
+			Destroy (hole);
+		foreach (GameObject coin in GameObject.FindGameObjectsWithTag("Coin"))
+			Destroy (coin);
+		foreach (GameObject tile in GameObject.FindGameObjectsWithTag("Tile"))
+			Destroy (tile);
 	}
 
 	void InitGrid ()
