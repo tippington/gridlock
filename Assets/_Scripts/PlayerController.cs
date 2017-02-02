@@ -67,6 +67,8 @@ public class PlayerController : MonoBehaviour
 
 	void Move (string dir)
 	{
+		GetComponent<Animator> ().SetTrigger ("startMove");
+
 		if (!CheckCanMove (dir))
 			return;
 		
