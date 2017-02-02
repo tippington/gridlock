@@ -127,7 +127,34 @@ public class SpawnController : MonoBehaviour
 
 	void SpawnCoin ()
 	{
-
+		//pick coin to spawn
+		GameObject coin = coins [Random.Range (0, coins.Count)];
+		//pick spawn point
+		int index = Random.Range (0, coinSpawnPoints.Count);
+		Vector3 spawnPoint = coinSpawnPoints [index];
+		//spawn enemy
+		GameObject newCoin = (GameObject)Instantiate (coin, spawnPoint, Quaternion.identity);
+		//set enemy direction
+		CoinController cc = newCoin.GetComponent<CoinController> ();
+		if (GameController.self.gridSize.x == 3f) {
+			if (index < 3)
+				cc.SetDirection ("right");
+			else if (index < 6)
+				cc.SetDirection ("left");
+			else if (index < 9)
+				cc.SetDirection ("down");
+			else
+				cc.SetDirection ("up");
+		} else if (GameController.self.gridSize.x == 5f) {
+			if (index < 5)
+				cc.SetDirection ("right");
+			else if (index < 10)
+				cc.SetDirection ("left");
+			else if (index < 15)
+				cc.SetDirection ("down");
+			else
+				cc.SetDirection ("up");
+		}
 	}
 
 

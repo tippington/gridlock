@@ -49,6 +49,7 @@ public class GameController : MonoBehaviour
 	void OnGUI ()
 	{
 		GUI.Label (new Rect (0, 0, 150, 20), "Score : " + Global.currentScore.ToString ());
+		GUI.Label (new Rect (0, 20, 150, 20), "Coins : " + Global.coins.ToString ());
 		if (GUI.Button (new Rect (Screen.width / 2 - 60, Screen.height - 60, 120, 60), "Reinit")) {
 			Application.LoadLevel ("Level0");
 		}
@@ -59,6 +60,11 @@ public class GameController : MonoBehaviour
 		Global.currentScore++;
 		currentHole.Score ();
 		SpawnBox ();
+	}
+
+	public void GotCoin ()
+	{
+		Global.coins++;
 	}
 
 	void InitGrid ()

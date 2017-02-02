@@ -7,6 +7,7 @@ public class Global : MonoBehaviour
 	public static float tileSize = 0.75f;
 	public static GameObject currentPlayer;
 	public static int currentScore;
+	public static int coins;
 
 
 

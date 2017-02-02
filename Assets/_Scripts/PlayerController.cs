@@ -43,6 +43,10 @@ public class PlayerController : MonoBehaviour
 			Die ();
 			col.gameObject.GetComponent<EnemyController> ().Die ();
 			break;
+		case "Coin":
+			GameController.self.GotCoin ();
+			col.gameObject.GetComponent<CoinController> ().Die ();
+			break;
 		}
 	}
 
