@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 776a249310a8042358780663691c88a2
+timeCreated: 1486015293
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: LECO 2014 Alternate
+  fontNames:
+  - LECO 2014 Alternate
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

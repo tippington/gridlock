@@ -11,7 +11,7 @@ public class Tile : MonoBehaviour
 	public float warningDuration;
 	public float size;
 
-	private float maxAlpha = 0.4f;
+	private float maxAlpha = 1f;
 	private bool fadingIn = false;
 	private bool fadingOut = false;
 	private float fadeTimer;

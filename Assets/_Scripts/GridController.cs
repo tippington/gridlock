@@ -21,6 +21,11 @@ public class GridController : MonoBehaviour
 		self = this;
 	}
 
+	void Start ()
+	{
+		InitTiles ();
+	}
+
 	void Update ()
 	{
 		if (!tilesReady)
@@ -35,7 +40,6 @@ public class GridController : MonoBehaviour
 
 	public void GameStart ()
 	{
-		InitTiles ();
 	}
 
 	public Vector3 GetWorldPosition (Vector2 tile)
