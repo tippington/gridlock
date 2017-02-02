@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour
 	void OnGUI ()
 	{
 		GUI.Label (new Rect (0, 0, 150, 20), "Score : " + Global.currentScore.ToString ());
-		if (GUI.Button (new Rect (Screen.width / 2 - 60, Screen.height - 20, 120, 20), "Reinit")) {
+		if (GUI.Button (new Rect (Screen.width / 2 - 60, Screen.height - 20, 120, 60), "Reinit")) {
 			Application.LoadLevel ("Level0");
 		}
 	}

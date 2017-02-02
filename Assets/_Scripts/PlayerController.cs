@@ -36,6 +36,16 @@ public class PlayerController : MonoBehaviour
 			Move ("right");			
 	}
 
+	void OnCollisionEnter (Collision col)
+	{
+		switch (col.gameObject.tag) {
+		case "Enemy":
+			Die ();
+			col.gameObject.GetComponent<EnemyController> ().Die ();
+			break;
+		}
+	}
+
 	public void GameStart ()
 	{
 		currentTile = Vector2.zero;
