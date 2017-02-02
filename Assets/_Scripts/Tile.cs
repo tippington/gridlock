@@ -59,20 +59,11 @@ public class Tile : MonoBehaviour
 
 	IEnumerator Heat ()
 	{
-//		fadeTimer = 0f;
-		//		fadingIn = true;
 		animator.SetTrigger ("startOpen");
-//		yield return new WaitForSeconds (warningDuration);
-//		fadingIn = false;
 		isHot = true;
 		yield return new WaitForSeconds (hotDuration);
-//		fadeTimer = 0f;
 		isHot = false;
 		animator.SetTrigger ("startClose");
-//		fadingOut = true;
-//		yield return new WaitForSeconds (warningDuration);
-//		fadingOut = false;
-
 	}
 
 

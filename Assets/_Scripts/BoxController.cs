@@ -5,11 +5,13 @@ using UnityEngine;
 public class BoxController : MonoBehaviour
 {
 	public Vector2 currentTile;
+	public float rotationRange;
 
+	private Animator animator;
 
 	void Start ()
 	{
-		
+		animator = GetComponent<Animator> ();
 	}
 
 	void Update ()
@@ -46,9 +48,14 @@ public class BoxController : MonoBehaviour
 			"position", GridController.self.GetWorldPosition (currentTile),
 			"islocal", false,
 			"looptype", "none",
-			"easetype", iTween.EaseType.easeOutQuad,
+			"easetype", iTween.EaseType.easeOutSine,
 			"time", PlayerController.self.moveDuration
 		));
+
+		float angle = Random.Range (-rotationRange, rotationRange);
+
+		transform.Rotate (Vector3.forward * angle);
+		animator.SetTrigger ("startPush");
 
 		//check against hole tile after moving
 		StartCoroutine (CheckHole (PlayerController.self.moveDuration));

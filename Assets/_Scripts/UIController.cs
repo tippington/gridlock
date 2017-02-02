@@ -28,7 +28,10 @@ public class UIController : MonoBehaviour
 	void Update ()
 	{
 		pointsScore.text = Global.currentScore.ToString ();
-		coinsScore.text = Global.coins.ToString () + " <size=16>coins earned</size>";
+		if (Global.coins == 1)
+			coinsScore.text = Global.coins.ToString () + " <size=16>star</size>";
+		else
+			coinsScore.text = Global.coins.ToString () + " <size=16>stars</size>";
 	}
 
 	public void GameOver ()
